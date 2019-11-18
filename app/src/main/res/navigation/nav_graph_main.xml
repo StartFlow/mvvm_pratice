@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/main_a_fragment"
+    android:id="@+id/nav_graph_main">
+
+    <fragment android:id="@+id/main_a_fragment"
+        android:name="zzs.example.demo.navigationtemp.ui.MainAFragment"
+        android:label="First A Fragment"
+        tools:layout="@layout/main_a_layout"
+        >
+        <action android:id="@+id/action_jump_b"
+            app:destination="@id/main_b_fragment"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popExitAnim="@anim/fragment_pop_exit"
+            app:popEnterAnim="@anim/fragment_pop_enter"/>
+    </fragment>
+
+    <fragment android:id="@+id/main_b_fragment"
+        android:name="zzs.example.demo.navigationtemp.ui.MainBFragment"
+        android:label="B Fragment"
+        tools:layout="@layout/main_b_layout"
+        >
+        <action android:id="@+id/action_jump_a"
+            app:destination="@id/main_a_fragment"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popExitAnim="@anim/fragment_pop_exit"
+            app:popEnterAnim="@anim/fragment_pop_enter"/>
+        <action android:id="@+id/action_jump_movie"
+            app:destination="@+id/movie_fragment"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popExitAnim="@anim/fragment_pop_exit"
+            app:popEnterAnim="@anim/fragment_pop_enter"/>
+
+    </fragment>
+
+    <fragment android:id="@+id/movie_fragment"
+        android:name="zzs.example.demo.navigationtemp.ui.MovieFragment"
+        android:label="Movie Fragment"
+        tools:layout="@layout/movie_fragment_layout">
+
+    </fragment>
+
+    <navigation
+        android:id="@+id/nav_graph_c"
+        app:startDestination="@id/main_c_fragment">
+        <fragment
+            android:id="@+id/main_c_fragment"
+            android:name="zzs.example.demo.navigationtemp.ui.MainCFragment"
+            android:label="C Fragment"
+            tools:layout="@layout/main_c_layout">
+
+        </fragment>
+    </navigation>
+
+
+
+</navigation>
